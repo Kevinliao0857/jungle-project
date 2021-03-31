@@ -8,7 +8,14 @@
           <th>Categories <%= @category_count %></th>
         </tr>
       </thead>
-     
       
     </table>
   </div>
+    <tr>
+      <th>
+      <%= link_to "Products", admin_products_path, class: "btn btn-lg btn-primary"%>
+      </th>
+       <th>
+      <%= link_to "Categories", admin_products_path, class: "btn btn-lg btn-primary"%>
+      </th>
+    </tr>
