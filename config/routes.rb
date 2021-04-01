@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :about, only: [:index]
 
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
   resource :cart, only: [:show] do
     post   :add_item
     post   :remove_item
@@ -74,4 +77,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end
