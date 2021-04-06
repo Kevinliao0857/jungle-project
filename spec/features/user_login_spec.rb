@@ -9,7 +9,7 @@ RSpec.feature "UserLogins", type: :feature, js: true do
 
   scenario "user login" do
     visit '/'
-    first('ul.navbar-right').find_link('Login').click
+    first('ul.nav.navbar-nav.navbar-right').find_link('Login').click
     fill_in 'email', with: 'link@example.com'
     fill_in 'password', with: 'hyrule'
     click_on 'Submit'
