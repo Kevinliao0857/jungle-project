@@ -27,12 +27,9 @@ RSpec.feature "PurchaseDetails", type: :feature, js: true do
   end
 
   scenario "They see an individual product details page" do
-    # ACT
     visit '/'
     first('article.product').click_on 'Details'
 
-
-    # DEBUG / VERIFY
     expect(page).to have_content '64.99'
     save_screenshot
   end
