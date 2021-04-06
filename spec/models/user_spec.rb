@@ -74,12 +74,25 @@ RSpec.describe User, type: :model do
         firstname: "Mario",
         lastname: "mario",
         email: "mArIo@example.com",
-        password: "Peach",
-        password_confirmation: "Peach"
+        password: "peach",
+        password_confirmation: "peach"
       )
-    authenticate = User.authenticate_with_credentials(user.email, user.password)
+    authenticate = User.authenticate_with_credentials("MArIo@example.com", user.password)
     expect(authenticate).to (be_nil)
     end
+
+    # it "should authenticate" do
+    #   user = User.create(
+    #     firstname: "Mario",
+    #     lastname: "mario",
+    #     email: "mario@example.com",
+    #     password: "peach",
+    #     password_confirmation: "peach"
+    #   )
+    # authenticate = User.authenticate_with_credentials("Mario@example.com", user.password)
+    # expect(authenticate).to_not (be_nil)
+    # end
+
 
   end
 
