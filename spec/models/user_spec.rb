@@ -5,7 +5,8 @@ RSpec.describe User, type: :model do
 
     it "should create user" do
       user = User.create(
-        name: "Princess Zelda",
+        firstname: "Princess",
+        lastname: "Zelda",
         email: "zeldalink@example.com",
         password: "link",
         password_confirmation: "link"
@@ -15,7 +16,8 @@ RSpec.describe User, type: :model do
 
     it "should have case sensitive matching passwords" do
       user = User.create(
-        name: "Princess Zelda",
+        firstname: "Princess",
+        lastname: "Zelda",
         email: "zelda@example.com",
         password: "LinK",
         password_confirmation: "link"
@@ -25,13 +27,15 @@ RSpec.describe User, type: :model do
 
     it "should have unique emails" do
       user = User.create(
-        name: "Zelda",
+        firstname: "Princess",
+        lastname: "Zelda",
         email: "zelda@example.com",
         password: "link",
         password_confirmation: "link"
       )
       user2 = User.create(
-        name: "Link",
+        firstname: "Princess",
+        lastname: "Zelda",
         email: "zelda@EXAMPLE.COM",
         password: "zelda",
         password_confirmation: "zelda"
@@ -41,7 +45,8 @@ RSpec.describe User, type: :model do
 
     it "should have a password be min length of 3" do
       user = User.create(
-        name: "Zelda",
+        firstname: "Princess",
+        lastname: "Zelda",
         email: "zelda@example.com",
         password: "hi",
         password_confirmation: "hi"
@@ -54,7 +59,8 @@ RSpec.describe User, type: :model do
   describe 'Authenticate_with_credentials' do
     it "should authenticate" do
       user = User.create(
-        name: "Mario",
+        firstname: "Mario",
+        lastname: "mario",
         email: "mario@example.com",
         password: "peach",
         password_confirmation: "peach"
